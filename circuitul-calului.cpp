@@ -1,6 +1,6 @@
 #include <iostream>
 #define N 10
-#define Ndirectii
+#define Ndirectii 8
 using namespace std;
 
 int n;
@@ -69,10 +69,10 @@ bool mutarea_calului(int i, int j, int pas)
 
         if (verificare_pozitie(i_next,j_next))
         {
-            tabla[i_next][j_next]=pas;
-            pas++;
+            tabla[i_next][j_next]=pas + 1;
+           
 
-            if (mutarea_calului(i_next,j_next,pas))
+            if (mutarea_calului(i_next,j_next,pas + 1))
                 return true;
 
             tabla[i_next][j_next] = 0;
@@ -85,6 +85,10 @@ bool mutarea_calului(int i, int j, int pas)
 int main()
 {
     citire_valori();
-    afisare_tabla();
+
+    if (mutarea_calului(i_start,j_start,1))
+     afisare_tabla();
+    else
+     cout<<"Nu exista solutie pentru circuitul calului in aceste circumstante"<<endl;
 }
 
