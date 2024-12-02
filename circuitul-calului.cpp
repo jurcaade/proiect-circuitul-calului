@@ -1,12 +1,13 @@
 #include <iostream>
 #define N 10
+#define Ndirectii
 using namespace std;
 
 int n;
 int tabla[N][N];
 int i_start, j_start;
-int miscare_i[] = { -2, -1, 1, 2, 2, 1, -1, -2 };
-int miscare_j[] = { 1, 2, 2, 1, -1, -2, -2, 1 };
+int miscare_i[Ndirectii] = { -2, -1, 1, 2, 2, 1, -1, -2 };
+int miscare_j[Ndirectii] = { 1, 2, 2, 1, -1, -2, -2, 1 };
 int i,j;
 
 void citire_valori()
@@ -45,6 +46,41 @@ void afisare_tabla()
     }
     cout<<endl;
 }
+
+bool verificare_pozitie (int x, int y)
+{
+    if ( x >= 0 && x < n && y >= 0 && y < n && tabla[x][y] == 0)
+     return true;
+    return false;   
+}
+
+bool mutarea_calului(int i, int j, int pas)
+{
+    if (pas == n*n)
+     return true;
+
+    int i_next;
+    int j_next;
+
+    for (int d=0; d<Ndirectii; d++)
+    {
+        i_next = i + miscare_i[d];
+        j_next = j + miscare_j[d];
+
+        if (verificare_pozitie(i_next,j_next))
+        {
+            tabla[i_next][j_next]=pas;
+            pas++;
+
+            if (mutarea_calului(i_next,j_next,pas))
+                return true;
+
+            tabla[i_next][j_next] = 0;
+        }
+    }
+    return false;
+}
+
 
 int main()
 {
