@@ -63,7 +63,7 @@ Programul poate fi rulat într-un mediu Docker, utilizând imaginea publicată p
      ```
 **Captură de ecran a rezultatului**:
    - Aici este captura de ecran a rezultatului programului:
-   ![Exemplu de rezultat](imagine/captura-proiect.png)
+   ![Exemplu de rezultat](imagine/captura-program.png)
 
 ## Bibliografie
 - [Metoda Backtracking - PBInfo](https://www.pbinfo.ro/articole/16597/metoda-backtracking)
