@@ -38,7 +38,7 @@ Programul poate fi rulat într-un mediu Docker, utilizând imaginea publicată p
 2. **Rularea aplicației**:
    - După ce imaginea a fost descărcată, poți rula aplicația utilizând comanda:
      ```bash
-     docker run jurcaade/circuitul-calului
+     docker run -it jurcaade/circuitul-calului
      ```
 
 3. **Interacțiunea cu programul**:
@@ -51,7 +51,7 @@ Programul poate fi rulat într-un mediu Docker, utilizând imaginea publicată p
    - După ce introduci datele, programul va calcula și va afișa tabla de șah finală, arătând cum calul a acoperit toate pozițiile.
 
 4. **Exemplu de rezultat**:
-   - Un exemplu de rezultat pentru o tablă de dimensiune 5x5 ar putea fi:
+   - Un exemplu de rezultat pentru o tablă de dimensiune 5x5 unde pozitia de start este (0,0) ar putea fi:
      ```
      Toate mutarile au fost efectuate. Tabla finala arata astfel:
 
@@ -61,6 +61,9 @@ Programul poate fi rulat într-un mediu Docker, utilizând imaginea publicată p
      10 15 6 23 8
      25 22 9 14 5
      ```
+**Captură de ecran a rezultatului**:
+   - Aici este captura de ecran a rezultatului programului:
+   ![Exemplu de rezultat](imagine/captura-proiect.png)
 
 ## Bibliografie
 - [Metoda Backtracking - PBInfo](https://www.pbinfo.ro/articole/16597/metoda-backtracking)
