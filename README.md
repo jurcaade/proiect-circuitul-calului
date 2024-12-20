@@ -19,10 +19,13 @@ Mediul de dezvoltare folosit pentru acest proiect este C++, iar programul a fost
 
 ## Exemple de rulare
 *Un exemplu de rulare este urmatorul:*
+
 Introduceti dimensiunea tablei de sah: 5
 Introduceti pozitia de start pentru i: 0
 Introduceti pozitia de start pentru j: 0
+
 Toate mutarile au fost efectuate. Tabla finala arata astfel:
+
 1 20 17 12 3
 16 11 2 7 18
 21 24 19 4 13
