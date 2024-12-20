@@ -62,7 +62,6 @@ Programul poate fi rulat într-un mediu Docker, utilizând imaginea publicată p
      25 22 9 14 5
      ```
 **Captură de ecran a rezultatului**:
-   - Aici este captura de ecran a rezultatului programului:
    ![Exemplu de rezultat](imagine/captura-program.png)
 
 ## Bibliografie
