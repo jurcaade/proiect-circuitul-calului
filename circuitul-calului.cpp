@@ -1,13 +1,13 @@
 #include <iostream>
-#define N 10
-#define Ndirectii 8
+#define N 100
 using namespace std;
 
 int n;
 int tabla[N][N];
 int i_start, j_start;
-int miscare_i[Ndirectii] = { -2, -1, 1, 2, 2, 1, -1, -2 };
-int miscare_j[Ndirectii] = { 1, 2, 2, 1, -1, -2, -2, 1 };
+const int Ndirectii=8;
+int miscare_i[Ndirectii] = { -2, -1, 1, 2,  2,  1, -1, -2 };
+int miscare_j[Ndirectii] = { 1, 2, 2, 1, -1, -2, -2, -1 };
 int i,j;
 
 void citire_valori()
@@ -37,41 +37,45 @@ void citire_valori()
 
 void afisare_tabla()
 {
-    cout<<"Toate mutarile au fost efectuate. Tabla finala arata astfel: ";
+    cout<<"Toate mutarile au fost efectuate. Tabla finala arata astfel: "<<endl;
     for (i=0;i<n;i++)
     {
-        cout<<endl;
         for (j=0;j<n;j++)
+        {
             cout<<tabla[i][j]<<" ";
+        }
+        cout<<endl;
     }
-    cout<<endl;
+  
 }
 
-bool verificare_pozitie (int x, int y)
+bool verificare_pozitie (int i, int j)
 {
-    if ( x >= 0 && x < n && y >= 0 && y < n && tabla[x][y] == 0)
-     return true;
-    return false;   
+   if (i < 0 || i >= n || j < 0 || j >= n || tabla[i][j] != 0)
+        return false;
+    return true;
 }
 
 bool mutarea_calului(int i, int j, int pas)
 {
-    if (pas == n*n)
-     return true;
+    if (pas == (n*n) + 1)
+    {
+        afisare_tabla();
+        return true;
+    }
 
     int i_next;
     int j_next;
 
-    for (int d=0; d<Ndirectii; d++)
+    for (int d = 0; d < Ndirectii; d++)
     {
         i_next = i + miscare_i[d];
         j_next = j + miscare_j[d];
 
         if (verificare_pozitie(i_next,j_next))
         {
-            tabla[i_next][j_next]=pas + 1;
+            tabla[i_next][j_next]=pas;
            
-
             if (mutarea_calului(i_next,j_next,pas + 1))
                 return true;
 
@@ -86,9 +90,9 @@ int main()
 {
     citire_valori();
 
-    if (mutarea_calului(i_start,j_start,1))
-     afisare_tabla();
-    else
+    if (!mutarea_calului(i_start,j_start,2))
      cout<<"Nu exista solutie pentru circuitul calului in aceste circumstante"<<endl;
+
+    return 0;
 }
 
