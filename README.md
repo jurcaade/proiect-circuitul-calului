@@ -12,30 +12,56 @@ Am ales să implementez algoritmul pentru rezolvarea problemei circuitului calul
 Scopul acestui proiect este de a implementa algoritmul de rezolvare a problemei calului pe o tablă de șah, oferind soluții interactive pentru utilizator.
 
 ## Detalii de implementare
-Am implementat soluția în C++ folosind tehnica de backtracking pentru a explora toate mutările calului pe tabla de șah. Algoritmul pornește de la poziția inițială și încearcă să viziteze toate celulele prin mutări valide, recursiv, până când toate pozițiile sunt acoperite sau nu mai există soluții.
+### Limbaj și tehnică
+Soluția a fost implementată în **C++**, folosind tehnica de **backtracking** pentru a explora toate mutările posibile ale calului pe tabla de șah. Algoritmul începe de la poziția inițială a calului și caută recursiv soluții care să viziteze toate celulele tablei.
+### Algoritm
+1. Programul primește dimensiunea tablei și coordonatele inițiale ale calului.
+2. Folosind direcțiile posibile de mișcare ale calului, se încearcă să se acopere întreaga tablă.
+3. Dacă toate celulele sunt vizitate, se afișează tabla finală cu soluția găsită.
+4. Dacă nu există o soluție, se va anunța acest lucru.
 
 ## Mediul de dezvoltare
-Mediul de dezvoltare folosit pentru acest proiect este C++, iar programul a fost implementat într-un mediu de dezvoltare integrat (IDE) precum Visual Studio Code. Codul a fost compilat și rulat pe o mașină cu sistemul de operare Ubuntu. Pentru contenorizare, am folosit Docker, care permite rularea aplicației într-un mediu izolat, asigurând portabilitatea și consistența între diferite sisteme.
+- **Limbaj de programare**: C++
+- **IDE**: Visual Studio Code
+- **Sistem de operare**: Ubuntu
+- **Mediu de dezvoltare**: Docker pentru rularea aplicației într-un mediu izolat, asigurând portabilitatea și consistența între diferite sisteme.
 
 ## Exemple de rulare
-*Un exemplu de rulare este urmatorul:*
+Programul poate fi rulat într-un mediu Docker, utilizând imaginea publicată pe Docker Hub. Urmează pașii de mai jos pentru a rula aplicația:
 
-Introduceti dimensiunea tablei de sah: 5
-Introduceti pozitia de start pentru i: 0
-Introduceti pozitia de start pentru j: 0
+1. **Descărcarea imaginii Docker**:
+   - Folosește comanda următoare pentru a descărca imaginea `circuitul-calului` din repository-ul `jurcaade`:
+     ```bash
+     docker pull jurcaade/circuitul-calului
+     ```
 
-Toate mutarile au fost efectuate. Tabla finala arata astfel:
+2. **Rularea aplicației**:
+   - După ce imaginea a fost descărcată, poți rula aplicația utilizând comanda:
+     ```bash
+     docker run jurcaade/circuitul-calului
+     ```
 
-1 20 17 12 3
+3. **Interacțiunea cu programul**:
+   - Programul îți va cere să introduci dimensiunea tablei de șah și pozițiile de start pentru cal. De exemplu:
+     ```
+     Introduceti dimensiunea tablei de sah: 5
+     Introduceti pozitia de start pentru i: 0
+     Introduceti pozitia de start pentru j: 0
+     ```
+   - După ce introduci datele, programul va calcula și va afișa tabla de șah finală, arătând cum calul a acoperit toate pozițiile.
 
-16 11 2 7 18
+4. **Exemplu de rezultat**:
+   - Un exemplu de rezultat pentru o tablă de dimensiune 5x5 ar putea fi:
+     ```
+     Toate mutarile au fost efectuate. Tabla finala arata astfel:
 
-21 24 19 4 13
-
-10 15 6 23 8
-
-25 22 9 14 5
+     1 20 17 12 3
+     16 11 2 7 18
+     21 24 19 4 13
+     10 15 6 23 8
+     25 22 9 14 5
+     ```
 
 ## Bibliografie
-- https://www.pbinfo.ro/articole/16597/metoda-backtracking
-- https://en.wikipedia.org/wiki/Knight%27s_tour
+- [Metoda Backtracking - PBInfo](https://www.pbinfo.ro/articole/16597/metoda-backtracking)
+- [Knight's Tour - Wikipedia](https://en.wikipedia.org/wiki/Knight%27s_tour)

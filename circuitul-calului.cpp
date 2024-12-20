@@ -6,7 +6,7 @@ int n;
 int tabla[N][N];
 int i_start, j_start;
 const int Ndirectii=8;
-int miscare_i[Ndirectii] = { -2, -1, 1, 2,  2,  1, -1, -2 };
+int miscare_i[Ndirectii] = { -2, -1, 1, 2, 2, 1, -1, -2 };
 int miscare_j[Ndirectii] = { 1, 2, 2, 1, -1, -2, -2, -1 };
 int i,j;
 
