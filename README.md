@@ -27,9 +27,13 @@ Introduceti pozitia de start pentru j: 0
 Toate mutarile au fost efectuate. Tabla finala arata astfel:
 
 1 20 17 12 3
+
 16 11 2 7 18
+
 21 24 19 4 13
+
 10 15 6 23 8
+
 25 22 9 14 5
 
 ## Bibliografie
