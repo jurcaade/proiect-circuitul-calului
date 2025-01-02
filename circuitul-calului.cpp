@@ -12,7 +12,7 @@ int i,j;
 
 void citire_valori()
 {
-    cout<<"Introduceti dimensiunea tablei de sahhh: ";
+    cout<<"Introduceti dimensiunea tablei de SAH: ";
     cin>>n;
     cout<<"Introduceti pozitia de start pentru i: ";
     cin>>i_start;
